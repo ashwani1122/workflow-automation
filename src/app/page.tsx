@@ -98,8 +98,8 @@ export default function Home() {
             <Link href={"/workflows"}>Start free trial  </Link> <ArrowRight size={20} />
           </button>
 
-          <button className="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold text-lg hover:bg-slate-50 transition flex items-center gap-2">
-            <Server size={20} /> Self-host docs
+          <button  className="px-8 py-4 bg-white shadow-amber-450 border border-slate-300 text-slate-700 rounded-lg font-semibold text-lg hover:bg-slate-50 transition flex items-center gap-2">
+            See Billing 
           </button>
         </div>
 
