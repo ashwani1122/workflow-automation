@@ -149,9 +149,10 @@ export default function Home() {
             Join thousands of developers building scalable automations.
           </p>
 
-          <button className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-bold text-lg hover:bg-slate-100 transition shadow-lg">
-            Deploy your first workflow
+          <Link href={"/workflows"}><button className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-bold text-lg hover:bg-slate-100 transition shadow-lg">
+           Deploy your first workflow 
           </button>
+          </Link>
         </div>
       </section>
 
