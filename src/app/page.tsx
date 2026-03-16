@@ -103,11 +103,11 @@ export default function Home() {
           </button>
         </div>
 
-        <section className="pt-20">
-          <img width={1400} height={400} src="/logos/hero.png" alt="hero image"/>
-        </section>
+       
       </section>
-
+      <section id="integrations" className=" flex  items-center justify-center w-full p-4">
+          <img width={1400} src="/logos/hero.png" alt="hero image"/>
+        </section>
       {/* Features */}
       <section id="features" className="bg-white py-24 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-8">
