@@ -3,15 +3,19 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Zap,
   ShieldCheck,
   Terminal,
   GitBranchPlus,
   Play,
-  Layers,
-  Cpu,
+  
   Globe,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+} from "@/components/ui/dialog";
+
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { useEffect, useState } from "react";
@@ -117,30 +121,32 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" className="rounded-full px-8 h-14 text-base bg-white text-black hover:bg-slate-200 transition-all hover:scale-105">
+            <Button onClick={()=>{
+              router.push("/workflows")
+            }} size="lg" className="rounded-full px-8 h-14 text-base bg-white text-black hover:bg-slate-200 transition-all hover:scale-105">
               Start Building Free <ArrowRight className="ml-2" size={20} />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-black border-white/10 hover:bg-white/5 transition-all">
-              <Play className="mr-2 fill-current" size={16} /> Watch Demo
-            </Button>
+           <Button
+            size="lg"
+            variant="outline"
+            onClick={() => {
+              document.getElementById("demo-video")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="rounded-full px-8 h-14 text-black border-white/10 hover:bg-white/5 transition-all"
+          >
+            <Play className="mr-2 fill-current" size={16} />
+            Watch Demo
+          </Button>
           </motion.div>
 
           {/* Abstract Dashboard Preview */}
-          <motion.div 
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="mt-20 relative max-w-5xl mx-auto group"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-            <div className="relative bg-slate-900 border border-white/10 rounded-2xl aspect-video shadow-2xl overflow-hidden">
-               {/* Replace this with an actual screenshot or interactive element */}
-               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-               <div className="flex items-center justify-center h-full">
-                  <img src={"../../logos/hero.png"} alt="" />
-               </div>
-            </div>
-          </motion.div>
+
+          <div className="w-full flex items-center p-4 justify-center mt-10 rounded ">
+            <img width={1000} src="../../logos/hero.png" alt="" />
+          </div>
+         
         </div>
       </section>
 
@@ -179,7 +185,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+       <motion.div 
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="mt-20 relative max-w-5xl mx-auto group"
+            id="demo-video"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <div className="relative bg-slate-900 border border-white/10 rounded-2xl aspect-video shadow-2xl overflow-hidden">
+               {/* Replace this with an actual screenshot or interactive element */}
+               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                <section className=" relative overflow-hidden">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            
 
+            <motion.div
+              
+              className="p-2 rounded-3xl bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/20 dark:border-slate-700/20 overflow-hidden group"
+            >
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/tKu7qPpkNAg"
+                  title="demo to see how it works"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+            </div>
+          </motion.div>
       {/* Dark CTA */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto rounded-[3rem] bg-indigo-600 p-12 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-indigo-500/20">
