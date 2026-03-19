@@ -42,8 +42,8 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#020617]/70 backdrop-blur-md">
         <div className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-[0_0_20px_rgba(79,70,229,0.4)] group-hover:scale-110 transition-transform">
-              <Zap size={20} className="fill-white" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center  group-hover:scale-110 transition-transform">
+              <img src="../../logos/logo.svg" alt="" />
             </div>
             <span className="text-xl font-bold tracking-tight">FlowForge</span>
           </div>
