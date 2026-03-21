@@ -6,7 +6,6 @@ import { FeaturesSection } from "@/components/hero/FeaturesSection";
 import { SectionSeparators } from "@/components/hero/SectionSeparators";
 import { DesktopPlayground } from "@/components/playground/DesktopPlayground";
 import { PricingSection } from "@/components/pricing";
-import { TemplatesSection } from "@/components/templates";
 import { ScrollArea } from "@/components/ui/scroll-area";
 export default function Home() {
     return (<main className="h-screen bg-[#151515]">
@@ -19,7 +18,6 @@ export default function Home() {
           <div className="snap-y snap-mandatory">
             <FeaturesSection />
             <DesktopPlayground />
-            <TemplatesSection />
           </div>
           <div className="md:hidden">
             <SectionSeparators />

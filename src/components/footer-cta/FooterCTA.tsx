@@ -18,7 +18,7 @@ export function FooterCTA() {
               <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                 Start building powerful workflows in minutes with flowforge
               </p>
-              <a href="/home" className="group inline-flex items-center gap-0.5 px-6 py-4 bg-white text-[#F04D26] font-semibold rounded-xl hover:bg-white/90 transition-all duration-150">
+              <a href="/workflows" className="group inline-flex items-center gap-0.5 px-6 py-4 bg-white text-[#F04D26] font-semibold rounded-xl hover:bg-white/90 transition-all duration-150">
                 Get Started
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" className="size-5 transition-transform duration-150 ease-out group-hover:translate-x-0.5 motion-reduce:transition-none">
                   <path stroke="currentColor" strokeLinecap="square" strokeWidth="1.25" d="M8.333 13.333 11.667 10 8.333 6.667"/>

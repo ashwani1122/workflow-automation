@@ -54,9 +54,9 @@ export const AppSidebar = () => {
   const { hasActiveSubscription, isLoading } = useHasActiveSubscription();
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarHeader>
-        <SidebarMenuItem>
+    <Sidebar  collapsible="icon">
+      <SidebarHeader className="bg-black text-white">
+        <SidebarMenuItem className="bg-black text-white">
           <SidebarMenuButton asChild className="gap-x-4 h-10 px-4">
             <Link href="/" prefetch>
               <Image src="/logos/logo.svg" alt="FlowForge" width={30} height={30} />
@@ -65,7 +65,7 @@ export const AppSidebar = () => {
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="bg-black text-white">
         {menuItems.map((group) => (
           <SidebarGroup key={group.title}>
             <SidebarGroupContent>
@@ -94,7 +94,7 @@ export const AppSidebar = () => {
           </SidebarGroup>
         ))}
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="bg-black text-white">
         <SidebarMenu>
           {!hasActiveSubscription && !isLoading && (
             <SidebarMenuItem>

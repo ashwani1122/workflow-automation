@@ -69,6 +69,7 @@ export const WorkflowsHeader = ({ disabled }: { disabled?: boolean }) => {
     <>
       {modal}
       <EntityHeader
+      
         title="Workflows"
         description="Create and manage your workflows"
         onNew={handleCreate}

@@ -37,7 +37,7 @@ export const EditorSaveButton = ({ workflowId }: { workflowId: string }) => {
   }
 
   return (
-    <div className="ml-auto">
+    <div className="ml-auto bg-black">
       <Button size="sm" onClick={handleSave} disabled={saveWorkflow.isPending}>
         <SaveIcon className="size-4" />
         Save
@@ -136,7 +136,7 @@ export const EditorBreadcrumbs = ({ workflowId }: { workflowId: string }) => {
 
 export const EditorHeader = ({ workflowId }: { workflowId: string }) => {
   return (
-    <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4 bg-background">
+    <header className="flex h-14 shrink-0 items-center gap-2 border-b px-4">
       <SidebarTrigger />
       <div className="flex flex-row items-center justify-between gap-x-4 w-full">
         <EditorBreadcrumbs workflowId={workflowId} />

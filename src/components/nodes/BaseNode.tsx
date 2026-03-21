@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Handle, Position } from '@xyflow/react';
 import { useEditor } from '../contexts/EditorContext';
 // import { useEditor } from '@/contexts/EditorContext';
-import { NodeConfigDialog } from '../dialogs';
 const NODE_ENTRANCE = {
     spring: { type: "spring" as const, stiffness: 350, damping: 25 },
 };
@@ -191,6 +190,5 @@ export default function BaseNode({ id, selected, icon, label, subtitle, isConfig
         </p>
       </div>
 
-      {!openNodeConfig && (<NodeConfigDialog open={configOpen} onOpenChange={setConfigOpen} nodeId={id} nodeType={nodeType} nodeData={getNodeData(id) || {}} onSave={(nodeId, data) => updateNodeData(nodeId, data)}/>)}
     </motion.div>);
 }
