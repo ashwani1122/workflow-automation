@@ -55,17 +55,27 @@ export const AppSidebar = () => {
 
   return (
     <Sidebar  collapsible="icon">
-      <SidebarHeader className="bg-black text-white">
-        <SidebarMenuItem className="bg-black text-white">
+      <SidebarHeader className="bg-zinc-900 text-white">
+        <SidebarMenuItem className="bg-zinc-900 text-white">
           <SidebarMenuButton asChild className="gap-x-4 h-10 px-4">
             <Link href="/" prefetch>
-              <Image src="/logos/logo.svg" alt="FlowForge" width={30} height={30} />
+              <svg width="28" height="28" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.52268 63.5L7.72607 46.0593H25.8786L22.3193 63.5H4.52268Z" fill="#D97757"/>
+                                <path d="M4.52268 63.5L7.72607 46.0593H25.8786L22.3193 63.5H4.52268Z" fill="#F04D26"/>
+                                <path d="M26.5905 46.0593L30.5057 27.5508H48.3023L44.0312 46.0593H26.5905Z" fill="#D97757"/>
+                                <path d="M26.5905 46.0593L30.5057 27.5508H48.3023L44.0312 46.0593H26.5905Z" fill="#F04D26"/>
+                                <path d="M19.4718 36.8051L23.3871 18.6525H60.0481L63.6074 0.5H7.72607L0.607422 36.8051H19.4718Z" fill="#D97757"/>
+                                <path d="M19.4718 36.8051L23.3871 18.6525H60.0481L63.6074 0.5H7.72607L0.607422 36.8051H19.4718Z" fill="#F04D26"/>
+                                <path d="M4.52268 63.5L7.72607 46.0593H25.8786L22.3193 63.5H4.52268Z" stroke="white"/>
+                                <path d="M26.5905 46.0593L30.5057 27.5508H48.3023L44.0312 46.0593H26.5905Z" stroke="white"/>
+                                <path d="M19.4718 36.8051L23.3871 18.6525H60.0481L63.6074 0.5H7.72607L0.607422 36.8051H19.4718Z" stroke="white"/>
+                            </svg>
               <span className="font-semibold text-sm">FlowForge</span>
             </Link>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarHeader>
-      <SidebarContent className="bg-black text-white">
+      <SidebarContent className="bg-zinc-900 text-white">
         {menuItems.map((group) => (
           <SidebarGroup key={group.title}>
             <SidebarGroupContent>
@@ -94,7 +104,7 @@ export const AppSidebar = () => {
           </SidebarGroup>
         ))}
       </SidebarContent>
-      <SidebarFooter className="bg-black text-white">
+      <SidebarFooter className="bg-zinc-900 text-white">
         <SidebarMenu>
           {!hasActiveSubscription && !isLoading && (
             <SidebarMenuItem>

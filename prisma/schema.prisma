@@ -132,7 +132,7 @@ model Node {
   type NodeType
   position Json
   data Json @default("{}")
-
+  status  NodeStatus  @default(Pending)
   credentialId String?
   credential Credential? @relation(fields: [credentialId], references: [id])
 
@@ -170,7 +170,7 @@ enum ExecutionStatus {
 
 model Execution {
   id String @id @default(cuid())
-
+  
   workflowId String
   workflow Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
 
@@ -184,4 +184,12 @@ model Execution {
   inngestEventId String @unique
 
   output Json?
+}
+
+enum NodeStatus {
+  Pending
+  Running
+  Success
+  Failed
+  Skipped
 }

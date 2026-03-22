@@ -43,5 +43,5 @@ export default function OpenAINode({ data, id, selected }: {
     const inputMode = resolveInputMode(data);
     const hasInput = inputMode === "json" ? !!data.requestJson?.trim() : !!data.prompt?.trim();
     const isConfigured = !!(data.credentialId?.trim() && data.model?.trim() && hasInput);
-    return (<BaseNode id={id} selected={selected} nodeType="openaiNode" icon={<Image alt="OpenAI" width={40} height={40} src="/logo/openai.svg" className="size-10 object-contain rounded-sm grayscale opacity-80"/>} label={data.label || 'OpenAI'} subtitle={getSubtitle(data, isConfigured)} isConfigured={isConfigured}/>);
+    return (<BaseNode id={id} selected={selected} nodeType="openaiNode" icon={<Image alt="OpenAI" width={40} height={40} src="/logo/openai.svg" className="size-10 object-contain rounded-sm grayscale opacity-80 bg-zinc-900"/>} label={data.label || 'OpenAI'} subtitle={getSubtitle(data, isConfigured)} isConfigured={isConfigured}/>);
 }

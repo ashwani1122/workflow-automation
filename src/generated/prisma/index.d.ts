@@ -96,6 +96,17 @@ export const ExecutionStatus: {
 
 export type ExecutionStatus = (typeof ExecutionStatus)[keyof typeof ExecutionStatus]
 
+
+export const NodeStatus: {
+  Pending: 'Pending',
+  Running: 'Running',
+  Success: 'Success',
+  Failed: 'Failed',
+  Skipped: 'Skipped'
+};
+
+export type NodeStatus = (typeof NodeStatus)[keyof typeof NodeStatus]
+
 }
 
 export type CredentialType = $Enums.CredentialType
@@ -109,6 +120,10 @@ export const NodeType: typeof $Enums.NodeType
 export type ExecutionStatus = $Enums.ExecutionStatus
 
 export const ExecutionStatus: typeof $Enums.ExecutionStatus
+
+export type NodeStatus = $Enums.NodeStatus
+
+export const NodeStatus: typeof $Enums.NodeStatus
 
 /**
  * ##  Prisma Client ʲˢ
@@ -8537,6 +8552,7 @@ export namespace Prisma {
     workflowId: string | null
     name: string | null
     type: $Enums.NodeType | null
+    status: $Enums.NodeStatus | null
     credentialId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -8547,6 +8563,7 @@ export namespace Prisma {
     workflowId: string | null
     name: string | null
     type: $Enums.NodeType | null
+    status: $Enums.NodeStatus | null
     credentialId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -8559,6 +8576,7 @@ export namespace Prisma {
     type: number
     position: number
     data: number
+    status: number
     credentialId: number
     createdAt: number
     updatedAt: number
@@ -8571,6 +8589,7 @@ export namespace Prisma {
     workflowId?: true
     name?: true
     type?: true
+    status?: true
     credentialId?: true
     createdAt?: true
     updatedAt?: true
@@ -8581,6 +8600,7 @@ export namespace Prisma {
     workflowId?: true
     name?: true
     type?: true
+    status?: true
     credentialId?: true
     createdAt?: true
     updatedAt?: true
@@ -8593,6 +8613,7 @@ export namespace Prisma {
     type?: true
     position?: true
     data?: true
+    status?: true
     credentialId?: true
     createdAt?: true
     updatedAt?: true
@@ -8678,6 +8699,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonValue
     data: JsonValue
+    status: $Enums.NodeStatus
     credentialId: string | null
     createdAt: Date
     updatedAt: Date
@@ -8707,6 +8729,7 @@ export namespace Prisma {
     type?: boolean
     position?: boolean
     data?: boolean
+    status?: boolean
     credentialId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -8724,6 +8747,7 @@ export namespace Prisma {
     type?: boolean
     position?: boolean
     data?: boolean
+    status?: boolean
     credentialId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -8738,6 +8762,7 @@ export namespace Prisma {
     type?: boolean
     position?: boolean
     data?: boolean
+    status?: boolean
     credentialId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -8752,12 +8777,13 @@ export namespace Prisma {
     type?: boolean
     position?: boolean
     data?: boolean
+    status?: boolean
     credentialId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type NodeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "workflowId" | "name" | "type" | "position" | "data" | "credentialId" | "createdAt" | "updatedAt", ExtArgs["result"]["node"]>
+  export type NodeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "workflowId" | "name" | "type" | "position" | "data" | "status" | "credentialId" | "createdAt" | "updatedAt", ExtArgs["result"]["node"]>
   export type NodeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     workflow?: boolean | WorkflowDefaultArgs<ExtArgs>
     credential?: boolean | Node$credentialArgs<ExtArgs>
@@ -8789,6 +8815,7 @@ export namespace Prisma {
       type: $Enums.NodeType
       position: Prisma.JsonValue
       data: Prisma.JsonValue
+      status: $Enums.NodeStatus
       credentialId: string | null
       createdAt: Date
       updatedAt: Date
@@ -9225,6 +9252,7 @@ export namespace Prisma {
     readonly type: FieldRef<"Node", 'NodeType'>
     readonly position: FieldRef<"Node", 'Json'>
     readonly data: FieldRef<"Node", 'Json'>
+    readonly status: FieldRef<"Node", 'NodeStatus'>
     readonly credentialId: FieldRef<"Node", 'String'>
     readonly createdAt: FieldRef<"Node", 'DateTime'>
     readonly updatedAt: FieldRef<"Node", 'DateTime'>
@@ -12031,6 +12059,7 @@ export namespace Prisma {
     type: 'type',
     position: 'position',
     data: 'data',
+    status: 'status',
     credentialId: 'credentialId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -12195,6 +12224,20 @@ export namespace Prisma {
    * Reference to a field of type 'QueryMode'
    */
   export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+  /**
+   * Reference to a field of type 'NodeStatus'
+   */
+  export type EnumNodeStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'NodeStatus'>
+    
+
+
+  /**
+   * Reference to a field of type 'NodeStatus[]'
+   */
+  export type ListEnumNodeStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'NodeStatus[]'>
     
 
 
@@ -12667,6 +12710,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFilter<"Node"> | $Enums.NodeType
     position?: JsonFilter<"Node">
     data?: JsonFilter<"Node">
+    status?: EnumNodeStatusFilter<"Node"> | $Enums.NodeStatus
     credentialId?: StringNullableFilter<"Node"> | string | null
     createdAt?: DateTimeFilter<"Node"> | Date | string
     updatedAt?: DateTimeFilter<"Node"> | Date | string
@@ -12683,6 +12727,7 @@ export namespace Prisma {
     type?: SortOrder
     position?: SortOrder
     data?: SortOrder
+    status?: SortOrder
     credentialId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -12702,6 +12747,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFilter<"Node"> | $Enums.NodeType
     position?: JsonFilter<"Node">
     data?: JsonFilter<"Node">
+    status?: EnumNodeStatusFilter<"Node"> | $Enums.NodeStatus
     credentialId?: StringNullableFilter<"Node"> | string | null
     createdAt?: DateTimeFilter<"Node"> | Date | string
     updatedAt?: DateTimeFilter<"Node"> | Date | string
@@ -12718,6 +12764,7 @@ export namespace Prisma {
     type?: SortOrder
     position?: SortOrder
     data?: SortOrder
+    status?: SortOrder
     credentialId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -12736,6 +12783,7 @@ export namespace Prisma {
     type?: EnumNodeTypeWithAggregatesFilter<"Node"> | $Enums.NodeType
     position?: JsonWithAggregatesFilter<"Node">
     data?: JsonWithAggregatesFilter<"Node">
+    status?: EnumNodeStatusWithAggregatesFilter<"Node"> | $Enums.NodeStatus
     credentialId?: StringNullableWithAggregatesFilter<"Node"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Node"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Node"> | Date | string
@@ -13375,6 +13423,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     workflow: WorkflowCreateNestedOneWithoutNodesInput
@@ -13390,6 +13439,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -13403,6 +13453,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workflow?: WorkflowUpdateOneRequiredWithoutNodesNestedInput
@@ -13418,6 +13469,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13432,6 +13484,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -13443,6 +13496,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -13454,6 +13508,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -14064,6 +14119,13 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type EnumNodeStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.NodeStatus | EnumNodeStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumNodeStatusFilter<$PrismaModel> | $Enums.NodeStatus
+  }
+
   export type WorkflowScalarRelationFilter = {
     is?: WorkflowWhereInput
     isNot?: WorkflowWhereInput
@@ -14081,6 +14143,7 @@ export namespace Prisma {
     type?: SortOrder
     position?: SortOrder
     data?: SortOrder
+    status?: SortOrder
     credentialId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -14091,6 +14154,7 @@ export namespace Prisma {
     workflowId?: SortOrder
     name?: SortOrder
     type?: SortOrder
+    status?: SortOrder
     credentialId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -14101,6 +14165,7 @@ export namespace Prisma {
     workflowId?: SortOrder
     name?: SortOrder
     type?: SortOrder
+    status?: SortOrder
     credentialId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -14140,6 +14205,16 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedJsonFilter<$PrismaModel>
     _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type EnumNodeStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.NodeStatus | EnumNodeStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumNodeStatusWithAggregatesFilter<$PrismaModel> | $Enums.NodeStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumNodeStatusFilter<$PrismaModel>
+    _max?: NestedEnumNodeStatusFilter<$PrismaModel>
   }
 
   export type NodeScalarRelationFilter = {
@@ -14747,6 +14822,10 @@ export namespace Prisma {
     set?: $Enums.NodeType
   }
 
+  export type EnumNodeStatusFieldUpdateOperationsInput = {
+    set?: $Enums.NodeStatus
+  }
+
   export type WorkflowUpdateOneRequiredWithoutNodesNestedInput = {
     create?: XOR<WorkflowCreateWithoutNodesInput, WorkflowUncheckedCreateWithoutNodesInput>
     connectOrCreate?: WorkflowCreateOrConnectWithoutNodesInput
@@ -15052,6 +15131,13 @@ export namespace Prisma {
     not?: NestedEnumNodeTypeFilter<$PrismaModel> | $Enums.NodeType
   }
 
+  export type NestedEnumNodeStatusFilter<$PrismaModel = never> = {
+    equals?: $Enums.NodeStatus | EnumNodeStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumNodeStatusFilter<$PrismaModel> | $Enums.NodeStatus
+  }
+
   export type NestedEnumNodeTypeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.NodeType | EnumNodeTypeFieldRefInput<$PrismaModel>
     in?: $Enums.NodeType[] | ListEnumNodeTypeFieldRefInput<$PrismaModel>
@@ -15083,6 +15169,16 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedEnumNodeStatusWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.NodeStatus | EnumNodeStatusFieldRefInput<$PrismaModel>
+    in?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.NodeStatus[] | ListEnumNodeStatusFieldRefInput<$PrismaModel>
+    not?: NestedEnumNodeStatusWithAggregatesFilter<$PrismaModel> | $Enums.NodeStatus
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumNodeStatusFilter<$PrismaModel>
+    _max?: NestedEnumNodeStatusFilter<$PrismaModel>
   }
 
   export type NestedEnumExecutionStatusFilter<$PrismaModel = never> = {
@@ -15549,6 +15645,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     workflow: WorkflowCreateNestedOneWithoutNodesInput
@@ -15563,6 +15660,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     outputConnections?: ConnectionUncheckedCreateNestedManyWithoutFromNodeInput
@@ -15642,6 +15740,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFilter<"Node"> | $Enums.NodeType
     position?: JsonFilter<"Node">
     data?: JsonFilter<"Node">
+    status?: EnumNodeStatusFilter<"Node"> | $Enums.NodeStatus
     credentialId?: StringNullableFilter<"Node"> | string | null
     createdAt?: DateTimeFilter<"Node"> | Date | string
     updatedAt?: DateTimeFilter<"Node"> | Date | string
@@ -15653,6 +15752,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     credential?: CredentialCreateNestedOneWithoutNodeInput
@@ -15666,6 +15766,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -16125,6 +16226,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     workflow: WorkflowCreateNestedOneWithoutNodesInput
@@ -16139,6 +16241,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -16156,6 +16259,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
     workflow: WorkflowCreateNestedOneWithoutNodesInput
@@ -16170,6 +16274,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -16229,6 +16334,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workflow?: WorkflowUpdateOneRequiredWithoutNodesNestedInput
@@ -16243,6 +16349,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16266,6 +16373,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workflow?: WorkflowUpdateOneRequiredWithoutNodesNestedInput
@@ -16280,6 +16388,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16521,6 +16630,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -16531,6 +16641,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workflow?: WorkflowUpdateOneRequiredWithoutNodesNestedInput
@@ -16545,6 +16656,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     outputConnections?: ConnectionUncheckedUpdateManyWithoutFromNodeNestedInput
@@ -16558,6 +16670,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -16568,6 +16681,7 @@ export namespace Prisma {
     type: $Enums.NodeType
     position: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: $Enums.NodeStatus
     credentialId?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -16600,6 +16714,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     credential?: CredentialUpdateOneWithoutNodeNestedInput
@@ -16613,6 +16728,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16626,6 +16742,7 @@ export namespace Prisma {
     type?: EnumNodeTypeFieldUpdateOperationsInput | $Enums.NodeType
     position?: JsonNullValueInput | InputJsonValue
     data?: JsonNullValueInput | InputJsonValue
+    status?: EnumNodeStatusFieldUpdateOperationsInput | $Enums.NodeStatus
     credentialId?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

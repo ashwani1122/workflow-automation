@@ -43,7 +43,7 @@ function WorkflowEdgeComponent({ id, sourceX, sourceY, targetX, targetY, data, }
 
         {edgeLabel ? (<foreignObject width={90} height={24} x={labelX - 45} y={labelY - 12} requiredExtensions="http://www.w3.org/1999/xhtml" style={{ overflow: "visible" }}>
             <div className="flex items-center justify-center">
-              <span className="px-2 py-0.5 rounded-md border border-white/20 bg-black/60 text-[10px] uppercase tracking-wide text-white/70 animate-in fade-in-0 zoom-in-95 duration-200">
+              <span className="px-2 py-0.5 rounded-md border border-white/20 bg-zinc-900/60 text-[10px] uppercase tracking-wide text-white/70 animate-in fade-in-0 zoom-in-95 duration-200">
                 {edgeLabel}
               </span>
             </div>

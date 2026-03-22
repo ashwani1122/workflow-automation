@@ -192,6 +192,7 @@ exports.Prisma.NodeScalarFieldEnum = {
   type: 'type',
   position: 'position',
   data: 'data',
+  status: 'status',
   credentialId: 'credentialId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -266,6 +267,14 @@ exports.NodeType = exports.$Enums.NodeType = {
   OPENAI: 'OPENAI',
   DISCORD: 'DISCORD',
   SLACK: 'SLACK'
+};
+
+exports.NodeStatus = exports.$Enums.NodeStatus = {
+  Pending: 'Pending',
+  Running: 'Running',
+  Success: 'Success',
+  Failed: 'Failed',
+  Skipped: 'Skipped'
 };
 
 exports.ExecutionStatus = exports.$Enums.ExecutionStatus = {

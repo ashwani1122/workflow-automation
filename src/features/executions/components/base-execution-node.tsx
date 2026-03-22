@@ -53,6 +53,7 @@ export const BaseExecutionNode = memo(
         onDelete={handleDelete}
         onSettings={onSettings}
       >
+        
         <NodeStatusIndicator
           status={status}
           variant="border"

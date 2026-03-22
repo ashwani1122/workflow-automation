@@ -4,7 +4,7 @@ const Layout = ({ children }: { children: React.ReactNode; }) => {
   return (
     <>
       <AppHeader />
-      <main className="flex-1 bg-black">{children}</main>
+      <main className="flex-1 bg-zinc-900">{children}</main>
     </>
   );
 };
