@@ -71,9 +71,7 @@ export default function Header() {
                         <Link href="#playground" onClick={(e) => handleSmoothScroll(e, 'playground')} className="text-sm font-medium text-[#C1B9B9] hover:text-white transition-colors duration-150 ease motion-reduce:transition-none">
                             Playground
                         </Link>
-                        <Link href="#templates" onClick={(e) => handleSmoothScroll(e, 'templates')} className="text-sm font-medium text-[#C1B9B9] hover:text-white transition-colors duration-150 ease motion-reduce:transition-none">
-                            Templates
-                        </Link>
+                       
                         <Link href="#pricing" onClick={(e) => handleSmoothScroll(e, 'pricing')} className="text-sm font-medium text-[#C1B9B9] hover:text-white transition-colors duration-150 ease motion-reduce:transition-none">
                             Pricing
                         </Link>
