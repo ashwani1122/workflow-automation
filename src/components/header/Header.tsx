@@ -59,7 +59,7 @@ export default function Header() {
                     
                     <div className="flex items-center pl-2 lg:pl-3">
                         <Link href="/" className="focus:outline-none flex items-center gap-2">
-                            <img src="/logos/logo.svg" alt="logo" />
+                            <img src="/logos/logo.svg" alt="logo" className="w-28 h-auto" />
                         </Link>
                     </div>
 
