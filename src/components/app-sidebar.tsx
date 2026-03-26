@@ -59,7 +59,7 @@ export const AppSidebar = () => {
         <SidebarMenuItem className="bg-zinc-900 text-white">
           <SidebarMenuButton asChild className="gap-x-4 h-10 px-4">
             <Link href="/" prefetch>
-              <img src="/logos/logo.svg" alt="logo" className="w-28 h-auto" />
+              <img src="/logos/logo.svg" alt="logo" className="w-12 h-auto" />
               <span className="font-semibold text-sm">FlowForge</span>
             </Link>
           </SidebarMenuButton>

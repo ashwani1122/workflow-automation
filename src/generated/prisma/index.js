@@ -278,7 +278,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Asus\\nodex\\src\\generated\\prisma",
+      "value": "C:\\Users\\ashwa\\workflow-automation\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -292,12 +292,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\Asus\\nodex\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\ashwa\\workflow-automation\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.19.2",
